@@ -31,7 +31,7 @@ app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
 // What we want to see on the page
 app.get('/',(req,res) => {
-    res.send('HELLO THERE');
+    res.render('index');
 })
 
 // setting our port for server
