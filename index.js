@@ -8,7 +8,7 @@ const path = require('path');
 const app = express();
 
 // Getting confidential/hidden values from config.env files
-dotenv.config({ "path": "./config.env"});
+dotenv.config( { path : 'config.env'} );
 
 // getting port value from env config file
 const PORT = process.env.PORT || 3000;
@@ -17,10 +17,10 @@ const PORT = process.env.PORT || 3000;
 app.use(morgan('tiny'));
 
 // parsing requests to body parser
-app.use(bodyp.urlencoded( { extended : true } ));
+app.use(bodyp.urlencoded({extended : true}));
 
 // setting view engine
-app.use("view engine", "ejs");
+app.set("view engine", "ejs");
 //app.set("views", path.resolve(__dirname,"views/ejs"));
 
 // loading the assets needed
@@ -31,7 +31,7 @@ app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
 // What we want to see on the page
 app.get('/',(req,res) => {
-    res.send('HELLO THERE!');
+    res.send('HELLO THERE');
 })
 
 // setting our port for server
