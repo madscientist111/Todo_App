@@ -9,6 +9,10 @@
                 <a href="/add-task" class="border-shadow">
                     <span class="text-gradient">New Task <i class="fa fa-tasks" aria-hidden="true"></i></span>
                 </a>
+                    <form class="example" action="/" method="GET" style="margin:auto;max-width:300px">
+                        <input type="text" placeholder="Search.." name="title">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
             </div>
 
             <!--Form Handling-->
@@ -31,14 +35,6 @@
             </form>
             <!--/Form Handling-->
 
-            <!--
-
-            <%= tasks %>
-            <%= tasks[1].targetDate %>
-            <% console.log(tasks[1].targetDate)%>
-            <% console.log(typeof tasks[1].targetDate)%>
-
-            -->
         </div>
     </main>
 <!--/Main section-->
