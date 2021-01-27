@@ -35,13 +35,31 @@ exports.create = (req,res) => {
 // retrieving a single task
 
 exports.find = (req,res) => {
-    Taskdb.find()
-        .then(task => {
-            res.send(task)
-        })
-        .catch(err => {
-            res.status(500).send({message: err.message || "Error occured while retrieving task information"})
-        })
+
+    if(req.query.id){
+        const id = req.query.id;
+
+        Taskdb.findById(id)
+            .then(data =>{
+                if(!data){
+                    res.status(404).send({ message : "Not found task with id" + id })
+                }else{
+                    res.send(data)
+                }
+            })
+            .catch(err => {
+                res.status(500).send({ message: "Error retrieving task with id" + id })
+            })
+    }
+    else{
+        Taskdb.find()
+            .then(task => {
+                res.send(task)
+            })
+            .catch(err => {
+                res.status(500).send({message: err.message || "Error occured while retrieving task information"})
+            })
+    }
 }
 
 
