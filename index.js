@@ -28,11 +28,8 @@ app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
-
-// What we want to see on the page
-app.get('/',(req,res) => {
-    res.render('index');
-})
+//loading routers
+app.use('/',require('./server/routes/router'));
 
 // setting our port for server
 app.listen(PORT,()=>{

@@ -1,17 +1,16 @@
-<% for(var i = 0; i < users.length; i++) { %>
-    <tr>
-        <td>ID</td>
-        <td>TITLE</td>
-        <td>DESCRIPTION</td>
-        <td>DATE</td>
-        <td>STATUS</td>
-        <td>
-            <a href="#" class="btn border-shadow update">
-                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
-            </a>
-            <a class="btn border-shadow delete" data-id=<%= users[i]._id%> >
-                <span class="text-gradient"><i class="fas fa-times"></i></span>
-            </a>
-        </td>
-    </tr>
-    <% } %>
+<tr>
+    <td>1</td>
+    <td>ML Assignment</td>
+    <td>Submitting the ML Assignment on Regression</td>
+    <td>19/02/2021</td>
+    <td>In-Progress</td>
+    <td>
+        <a href="/update-task" class="btn border-shadow update">
+            <span class="text-gradient">Edit</span>
+        </a>
+         |
+        <a href="#" class="btn border-shadow delete">
+            <span class="text-gradient">Delete</span>
+        </a>
+    </td>
+</tr>
