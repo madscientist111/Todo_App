@@ -1,7 +1,6 @@
 <!--include header-->
 <%- include('include/_header') %>
 <!--/include header-->
-
     <!--Main section-->
     <main id="site-main">
         <div class="container">
@@ -16,7 +15,48 @@
             </div>
 
         <!--add task form-->
-        <%- include('include/_form') %>
+        <!-- form handling -->
+        <form method="POST" id="update_task">
+            <div class="new_task">
+                <div class="form-group">
+                    <label for="title" class="text-light">Title</label>
+                    <input type="hidden" name="id" value="<%= task._id %>">
+                    <input type="text" name="title" value="<%= task.title %>" placeholder="ML Assignment">
+                </div>
+                <div class="form-group">
+                    <label for="description" class="text-light">Description</label>
+                    <input type="text" name="description" value="<%= task.description %>" placeholder="Regression Assignment with a colab file">
+                </div>
+                <div class="form-group">
+                    <label for="targetDate" class="text-light">Target-Date</label>
+                    <div class="date inline">
+                        <input type="date" id="date-2" name="targetDate" <% var d = task.targetDate.substr(0,10)%> value= "<%=d%>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="text-light">Status</label>
+                    <div class="radio inline">
+                        <input type="radio" id="radio-4" name="status" value="ToDO"<%= task.status=='ToDo'?'checked':'' %> >
+                        <label for="radio-4" class="radio-label">ToDo</label>
+                    </div>
+                    <div class="radio inline">
+                        <input type="radio" id="radio-5" name="status" value="In-Progress"<%= task.status=='In-Progress'?'checked':'' %> >
+                        <label for="radio-5" class="radio-label">In-Progress</label>
+                    </div>
+                    <div class="radio inline">
+                        <input type="radio" id="radio-6" name="status" value="Done"<%= task.status=='Done'?'checked':'' %> >
+                        <label for="radio-6" class="radio-label">Done</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn text-dark update">Save</button>
+                </div>
+
+            </div>
+        </form>
+
         </div>
     </main>
     <!--/Main section-->

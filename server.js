@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const bodyp = require('body-parser');
 const path = require('path');
 
+
 const connectDB = require('./server/database/connection');
 
 // creating instance of Express
@@ -32,6 +33,10 @@ app.set("view engine", "ejs");
 app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
+
+
+const moment = require('moment');
+app.locals.moment = require('moment');
 
 //loading routers
 app.use('/',require('./server/routes/router'));

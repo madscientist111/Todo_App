@@ -22,7 +22,7 @@ exports.add_task = (req,res) => {
 exports.update_task = (req,res) => {
     axios.get('http://localhost:3000/api/tasks',{ params: { id : req.query.id } })
     .then(function(taskdata){
-        res.render("update_user", { task : taskdata.data } );
+        res.render("update_task", { task : taskdata.data } );
     }).catch( err => {
         res.send(err);
     })
