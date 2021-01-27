@@ -27,6 +27,7 @@ route.get('/update-task',services.update_task);
 //creating API Route
 route.post('/api/tasks',controller.create);
 route.get('/api/tasks',controller.find);
+route.get('/api/tasks/search',controller.search);
 route.put('/api/tasks/:id',controller.update);
 route.delete('/api/tasks/:id',controller.delete);
 
